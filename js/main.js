@@ -14,6 +14,11 @@ function motRanddomChoisi(){
 console.log( motRanddomChoisi())
 
 
-if(motRanddomChoisi().includes(letterEnter.value)){
-    console.log(letterEnter.value)
+function findWordPendu(){
+    if(motRanddomChoisi().includes(letterEnter.value)){
+        console.log(letterEnter.value)
+    }
 }
+
+
+boutonEntrer.addEventListener("click", findWordPendu);
