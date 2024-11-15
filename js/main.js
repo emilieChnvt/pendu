@@ -45,11 +45,10 @@ function findWordPendu() {
         alert("Mauvaise lettre ! Essayez encore.");
     }
 
-
     // Vérifier si le joueur a gagné
     if (motCache.join("") === motDecettePartie) {
         response.innerHTML = `Félicitations ! Vous avez trouvé le mot : ${motDecettePartie}`;
-        boutonEntrer.disabled = true; // Désactiver le bouton après la victoire
+
     }
 }
 
