@@ -9,7 +9,7 @@ const containerLettres = document.querySelector('.lettresEssayees');
 let mots = ["arraignee", "bois", "table", "chaise", "curseur", "chantier", "elephant", "fenetre"];
 let motDecettePartie = getRandomWordFromDict(); // Mot aléatoire
 let motCache = Array(motDecettePartie.length).fill("_"); // Masquer le mot avec des underscores
-let lettreEssayee = [];
+let tentatives = [];
 
 // Initialiser la première et la dernière lettre
 initializeFirstAndLastLetter();
@@ -41,14 +41,19 @@ function findWordPendu() {
         for (let i = 0; i < motDecettePartie.length; i++) {
             if (motDecettePartie[i] === lettre) {
                 motCache[i] = lettre; // Révéler la lettre correcte
-                lettreEssayee.push(lettre);
-                containerLettres.innerHTML = lettreEssayee
+                tentatives.push(lettre);
+                containerLettres.innerHTML = tentatives
+
             }
 
         }
         response.innerHTML = motCache.join(" ");
     } else {
+        tentatives.push(lettre);
+        containerLettres.innerHTML = tentatives
         alert("Mauvaise lettre ! Essayez encore.");
+
+
     }
 
 
@@ -57,6 +62,12 @@ function findWordPendu() {
     if (motCache.join("") === motDecettePartie) {
         response.innerHTML = `Félicitations ! Vous avez trouvé le mot : ${motDecettePartie}`;
 
+    }
+}
+// Tentatives
+function tentative(){
+    if(lettreEssayee >= 2){
+        console.log("aie");
     }
 }
 
