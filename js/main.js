@@ -42,19 +42,17 @@ function findWordPendu() {
             if (motDecettePartie[i] === lettre) {
                 motCache[i] = lettre; // Révéler la lettre correcte
                 tentatives.push(lettre);
-                containerLettres.innerHTML = tentatives
+                containerLettres.innerHTML = tentatives;
 
             }
-
         }
         response.innerHTML = motCache.join(" ");
-    } else {
+    }else {
         tentatives.push(lettre);
         containerLettres.innerHTML = tentatives
         alert("Mauvaise lettre ! Essayez encore.");
-
-
     }
+    tentativesFaites()
 
 
 
@@ -65,10 +63,14 @@ function findWordPendu() {
     }
 }
 // Tentatives
-function tentative(){
-    if(lettreEssayee >= 2){
-        console.log("aie");
+function tentativesFaites(){
+    if(tentatives.length >= 10){
+        containerLettres.innerHTML += "Nombres de tentatives dépassées"
+        containerLettres.style.color = 'red';
+
     }
+
+
 }
 
 
