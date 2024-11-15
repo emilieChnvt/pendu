@@ -34,7 +34,16 @@ function findWordPendu() {
     letterEnter.value = ""; // Vider input
 
     // Vérifier si la lettre est dans le mot
-
+    if (motDecettePartie.includes(lettre)) {
+        for (let i = 0; i < motDecettePartie.length; i++) {
+            if (motDecettePartie[i] === lettre) {
+                motCache[i] = lettre; // Révéler la lettre correcte
+            }
+        }
+        response.innerHTML = motCache.join(" ");
+    } else {
+        alert("Mauvaise lettre ! Essayez encore.");
+    }
 
 
     // Vérifier si le joueur a gagné
