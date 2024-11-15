@@ -16,16 +16,12 @@ let motCache = ['_']
 boutonEntrer.addEventListener("click", findWordPendu);
 
 // Fonctions
-
-
 function getRandomWordFromDict(){
     const motPendu = Math.floor(Math.random() * mots.length);
     return  mots[motPendu]
 }
 let motDecettePartie = getRandomWordFromDict()
 console.log( motDecettePartie)
-motCache[0] = motDecettePartie[0]; // Première lettre
-motCache[motDecettePartie.length - 1] = motDecettePartie[motDecettePartie.length - 1]; // Dernière lettre
 
 
 
@@ -34,22 +30,25 @@ function findWordPendu(){
         for(let j = 0; j < motDecettePartie.length; j++){
             if(motDecettePartie[j] === letterEnter.value){
                 motCache[j] = letterEnter.value;
-                console.log(motCache[j]);
+
                 response.innerHTML = motCache;
             }
         }
 
     }
 }
+findWordPendu()
 
-function sortFirstAndLastElement(){
+function initializeFirstAndLastLetter(){
     //underscore
-        response.innerHTML += motCache;
+    motCache[0] = motDecettePartie[0]; // Première lettre
+    motCache[motDecettePartie.length - 1] = motDecettePartie[motDecettePartie.length - 1]; // Dernière lettre
+    response.innerHTML += motCache;
 
 
 
 }
-sortFirstAndLastElement();
+initializeFirstAndLastLetter();
 
 
 
