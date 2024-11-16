@@ -37,12 +37,13 @@ function findWordPendu() {
     letterEnter.value = ""; // Vider input
 
     if(tentatives.includes(lettre)) {
-        alert("vous avez déjà essayé cette lettre !");
+        containerLettres.innerHTML = `<p style="color: orange;">Vous avez déjà essayé cette lettre : ${lettre}</p>`;
         return; // permet d'arrêter la boucles, de ne pas ajouter la lettre
     }
 
     tentatives.push(lettre);
-    containerLettres.innerHTML += `Lettres essayées : ${tentatives.join(" ")}`;
+
+
     // Vérifier si la lettre est dans le mot
     if (motDecettePartie.includes(lettre)) {
         for (let i = 0; i < motDecettePartie.length; i++) {
@@ -53,7 +54,8 @@ function findWordPendu() {
         response.innerHTML = motCache.join(" ");
     }else {
 
-        alert("Mauvaise lettre ! Essayez encore.");
+        containerLettres.innerHTML = `<p style="color: red;">Lettre incorrecte : ${lettre}</p>`;
+    }
     }
 
     tentativesFaites()
@@ -64,7 +66,7 @@ function findWordPendu() {
     if (motCache.join("") === motDecettePartie) {
         response.innerHTML = `Félicitations ! Vous avez trouvé le mot : ${motDecettePartie}`;
 
-    }
+
 }
 // Tentatives
 function tentativesFaites(){
@@ -74,6 +76,7 @@ function tentativesFaites(){
         containerLettres.style.color = 'red';
     }
 }
+
 
 
 
