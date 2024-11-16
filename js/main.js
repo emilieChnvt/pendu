@@ -53,30 +53,31 @@ function findWordPendu() {
         }
         response.innerHTML = motCache.join(" ");
     }else {
-
-        containerLettres.innerHTML = `<p style="color: red;">Lettre incorrecte : ${lettre}</p>`;
+        containerLettres.innerHTML = `<p style="color: red;">Lettre incorrecte : ${lettre}</p>`; //  ne fonctionne pas
     }
-    }
-
-    tentativesFaites()
-
-
+    containerLettres.innerHTML = `Lettres essayées : ${tentatives.join(" ")}`;
 
     // Vérifier si le joueur a gagné
     if (motCache.join("") === motDecettePartie) {
-        response.innerHTML = `Félicitations ! Vous avez trouvé le mot : ${motDecettePartie}`;
+        response.innerHTML = `<p style="color: green;">Félicitations ! Vous avez trouvé le mot : ${motDecettePartie}</p>`;
+        boutonEntrer.disabled = true; // Désactiver le bouton après la victoire
+        return;
+    }
 
-
+    tentativesFaites()
 }
+
+
+
+
 // Tentatives
 function tentativesFaites(){
-    if(tentatives.length >= 2){
+    if(tentatives.length >= 12){
         response.innerHTML = "Nombres de tentatives dépassées"
         boutonEntrer.disabled = true;
         containerLettres.style.color = 'red';
     }
 }
-
 
 
 
