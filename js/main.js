@@ -36,22 +36,27 @@ function findWordPendu() {
     const lettre = letterEnter.value.toLowerCase(); // Récupérer la lettre saisie et la convertir en minuscule
     letterEnter.value = ""; // Vider input
 
+    if(tentatives.includes(lettre)) {
+        alert("vous avez déjà essayé cette lettre !");
+        return; // permet d'arrêter la boucles, de ne pas ajouter la lettre
+    }
+    tentatives.push(lettre);
+    containerLettres.innerHTML = `Lettres essayées : ${tentatives.join(", ")}`;
     // Vérifier si la lettre est dans le mot
     if (motDecettePartie.includes(lettre)) {
         for (let i = 0; i < motDecettePartie.length; i++) {
             if (motDecettePartie[i] === lettre) {
                 motCache[i] = lettre; // Révéler la lettre correcte
-                tentatives.push(lettre);
-                containerLettres.innerHTML = tentatives;
+
 
             }
         }
         response.innerHTML = motCache.join(" ");
     }else {
-        tentatives.push(lettre);
-        containerLettres.innerHTML = tentatives
+
         alert("Mauvaise lettre ! Essayez encore.");
     }
+
     tentativesFaites()
 
 
@@ -67,10 +72,8 @@ function tentativesFaites(){
     if(tentatives.length >= 10){
         containerLettres.innerHTML += "Nombres de tentatives dépassées"
         containerLettres.style.color = 'red';
-
     }
-
-
 }
+
 
 
