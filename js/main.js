@@ -49,6 +49,8 @@ function findWordPendu() {
     const lettre = letterEnter.value.toLowerCase(); // Récupérer la lettre saisie et la convertir en minuscule
     letterEnter.value = ""; // Vider input
 
+
+
     if(tentatives.includes(lettre)) {
         console.log(tentatives);
         containerLettres.innerHTML = `<p style="color: orange;">Vous avez déjà essayé cette lettre : ${lettre}</p>`;
@@ -85,8 +87,6 @@ function findWordPendu() {
 
     tentativesFaites()
 }
-
-
 
 
 // Tentatives

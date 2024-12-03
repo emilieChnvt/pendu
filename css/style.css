@@ -1,4 +1,12 @@
 .pendu{
-    height: 80vh
+    height: 100vh
 }
 
+.size{
+    width: 80vw;
+    height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
