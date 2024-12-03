@@ -10,7 +10,7 @@
 <body>
 
 <div class="container pendu text-center d-flex align-items-center flex-direction justify-content-center gap-3 ">
-    <div class="border border-primary p-5 rounded-5">
+    <div class=" size border border-primary p-5 rounded-5">
         <h1>Devinez le mot</h1>
         <div class="pt-5">
             <input type="text" id="letterEnter" placeholder="Enter a letter">
@@ -20,9 +20,14 @@
         </div>
 
     </div>
-    <div class="lettresEssayees border  border-primary p-5 rounded-5">
-
-
+    <div class="lettresEssayees size border  border-primary p-5 rounded-5">
+        <h4>Lettres incorrectes :</h4>
+        <h4 class="lettres"></h4>
+    </div>
+    <div class="tentativesPendu  size border  border-primary p-5 rounded-5">
+        <p>Nombre de tentatives au départ 3</p>
+        <h4>Nombre de tentatives restantes:</h4>
+        <div class="score"></div>
     </div>
 </div>
 
