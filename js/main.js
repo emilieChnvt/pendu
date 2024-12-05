@@ -91,9 +91,8 @@ function findWordPendu() {
 
 // Tentatives
 function tentativesFaites(){
-    if(lettrePasDansMot.length  >= nbTentatives ){
-        console.log('Nombre de tentatives incorrectes :', lettrePasDansMot.length);
-        console.log('Nombre maximum autorisé :', nbTentatives);
+    if(nbTentatives <= 0 ){
+
         tentativesPendu.innerHTML = `<h1>Game Over</h1>`
         boutonEntrer.disabled = true;
         containerLettres.style.color = 'red';
