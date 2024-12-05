@@ -69,7 +69,7 @@ function findWordPendu() {
         response.innerHTML = motCache.join(" ");
     }else{
         lettrePasDansMot.push(lettre);
-        lettres.innerHTML = `<p style="color: red;">${lettre}</p>`;
+        lettres.innerHTML += `<p style="color: red;">${lettre}</p>`;
        nbTentatives--;
         console.log(nbTentatives);
        score.innerHTML = `<p style="color: black; font-size: 3rem">${nbTentatives}</p>`;
