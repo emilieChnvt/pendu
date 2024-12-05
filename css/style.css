@@ -1,3 +1,45 @@
+.body{
+    background: #f0f8ff;
+    color: #333;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+.gameContainer{
+    padding:20px;
+    border-radius: 15px;
+    background-color: #ffffff;
+    box-shadow: 10px 10px 5px #ccc;
+}
+.response{
+    font-size: 2rem;
+    margin:20px 0;
+    color:#555;
+}
+
+.lettresEssayees{
+    width:50px;
+    padding: 10px;
+    text-align: center;
+    border:2px solid #ddd;
+    border-radius: 5px;
+}
+.boutonEntrer{
+    margin:20px 0;
+    padding: 10px 20px;
+    background-color: #007BFF;
+    border: none;
+    border-radius: 5px;
+
+}
+.score{
+    margin-top:20px;
+    color: #ff0000;
+}
+.response p{
+    font-weight: bold;
+    color:green;
+}
 .pendu{
     height: 100vh
 }
