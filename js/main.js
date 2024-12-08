@@ -53,7 +53,13 @@ function findWordPendu() {
     if(tentatives.includes(lettre)) {
         console.log(tentatives);
         response.innerHTML += `<p style="color: orange;">Vous avez déjà essayé cette lettre : ${lettre}</p>`;
-        return; // permet d'arrêter la boucle, de ne pas ajouter la lettre
+        setTimeout( ()=>{
+            const message = response.querySelector('p:last-child');
+            if(message) {
+                message.remove()
+            }
+        }, 3000)
+        return;// permet d'arrêter la boucle, de ne pas ajouter la lettre
     }
 
     // Vérifier si la lettre est dans le mot
