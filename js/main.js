@@ -50,13 +50,11 @@ function findWordPendu() {
     letterEnter.value = ""; // Vider input
 
 
-
     if(tentatives.includes(lettre)) {
         console.log(tentatives);
         response.innerHTML += `<p style="color: orange;">Vous avez déjà essayé cette lettre : ${lettre}</p>`;
         return; // permet d'arrêter la boucle, de ne pas ajouter la lettre
     }
-
 
     // Vérifier si la lettre est dans le mot
     if (motDecettePartie.includes(lettre)) {
