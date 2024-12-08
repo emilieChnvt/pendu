@@ -14,7 +14,7 @@ let motDecettePartie = getRandomWordFromDict(); // Mot aléatoire
 let motCache = Array(motDecettePartie.length).fill("_"); // Masquer le mot avec des underscores
 let tentatives = [];
 let lettrePasDansMot = []
-let nbTentatives = 3;
+let nbTentatives = 6;
 
 // Initialiser la première et la dernière lettre
 initializeFirstAndLastLetter();
@@ -53,7 +53,7 @@ function findWordPendu() {
 
     if(tentatives.includes(lettre)) {
         console.log(tentatives);
-        containerLettres.innerHTML = `<p style="color: orange;">Vous avez déjà essayé cette lettre : ${lettre}</p>`;
+        response.innerHTML += `<p style="color: orange;">Vous avez déjà essayé cette lettre : ${lettre}</p>`;
         return; // permet d'arrêter la boucle, de ne pas ajouter la lettre
     }
 
